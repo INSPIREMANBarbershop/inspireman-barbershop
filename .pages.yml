@@ -207,7 +207,7 @@
             {
               "name": "image",
               "label": "Fotografía",
-              "type": "image",
+              "type": "file",
               "required": true,
               "options": {
                 "media": "default",
