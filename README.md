@@ -1,6 +1,6 @@
 # Inspireman Barbershop · Black Chrome
 
-Web estática en español. No se ha publicado ni se ha conectado una cuenta de GitHub. El PNG original se conserva sin modificar. La copia V9 está en `backup/index-v9.html` y se excluye del repositorio y del despliegue.
+Web estática en español. Repositorio preparado: https://github.com/INSPIREMANBarbershop/inspireman-barbershop . La web nueva no se ha publicado. El PNG original se conserva sin modificar. La copia V9 está en `backup/index-v9.html` y se excluye del repositorio y del despliegue.
 
 ## Ver la web en tu ordenador
 
@@ -28,7 +28,7 @@ Visita http://127.0.0.1:8080/ . Para detener el servidor, pulsa Ctrl+C. No requi
 
 ## Activar el panel sin programar
 
-1. Primero hay que disponer de un repositorio GitHub bajo tu control y subir este proyecto incluyendo los archivos ocultos. Esta acción aún no se ha realizado. No subir `backup/`, `dist/`, archivos de cuenta ni contraseñas.
+1. El repositorio ya está creado en https://github.com/INSPIREMANBarbershop/inspireman-barbershop y contiene el proyecto incluyendo los archivos ocultos. No subir `backup/`, `dist/`, archivos de cuenta ni contraseñas.
 2. Entra en https://app.pagescms.org y accede con GitHub. Autoriza la aplicación oficial solo para este repositorio. Revisa los permisos en el momento de autorizar.
 3. Selecciona el repositorio y la rama `main`. Pages CMS leerá `.pages.yml` y mostrará «Contenido de la web».
 4. Edita los campos y guarda. Los cambios quedan en GitHub; guardar no publica con el flujo actual.
@@ -41,13 +41,13 @@ El panel usa autenticación real del proveedor; no hay contraseñas en la web ni
 
 ## Preparar GitHub Pages gratuito (sin publicar todavía)
 
-Faltan usuario GitHub y nombre del repositorio. En GitHub Free, Pages admite repositorios públicos; su código y contenido serán visibles. No requiere dominio propio ni VPS. La dirección final será `https://USUARIO.github.io/REPOSITORIO/`, sin inventar estos valores.
+Cuenta: INSPIREMANBarbershop. Repositorio: inspireman-barbershop. En GitHub Free, Pages admite repositorios públicos; su código y contenido serán visibles. No requiere dominio propio ni VPS. La dirección final será `https://inspiremanbarbershop.github.io/inspireman-barbershop/` después del primer despliegue autorizado; todavía no es una web nueva publicada.
 
-Antes de lanzar: revisar contigo diseño, datos, enlaces, material fotográfico disponible y decisión de publicación. **No activar Pages ni ejecutar la publicación sin tu autorización.**
+Antes de lanzar: revisar contigo diseño, datos, enlaces, material fotográfico disponible y decisión de publicación. **No ejecutar la publicación sin tu autorización.** Pages tiene GitHub Actions como origen; cambiar el origen no ha desplegado la web.
 
 Una vez autorizada la publicación:
 
-1. En Settings → Pages, selecciona GitHub Actions como origen.
+1. En Settings → Pages, el origen GitHub Actions ya está preparado.
 2. En Actions → «Preparar o publicar GitHub Pages» → Run workflow, selecciona `main`.
 3. Para validar únicamente, deja «Publicar con autorización del propietario» sin marcar. Se genera un artefacto, sin desplegar.
 4. Para publicar una versión autorizada, marca esa opción y ejecuta. Confirma que ambos trabajos terminan correctamente y abre la URL de la sección Pages. Comprueba enlaces, logo y navegación en móvil.
@@ -69,7 +69,7 @@ Para exportar a otro alojamiento estático: ejecuta la generación y copia el co
 - Por decisión del propietario, la web mantiene solo las categorías confirmadas y remite a Fresha para consultar los servicios; no es necesario completar precios ni duraciones en la web.
 - Fotos reales del local y de los cortes, con permiso para mostrarlas.
 - Si deseas WhatsApp y si este teléfono lo recibe. No hay botón de WhatsApp por ahora.
-- Usuario GitHub y nombre deseado del repositorio.
+- Autorización expresa para el primer despliegue.
 - Revisión de cualquier texto legal que corresponda antes de la publicación; no se ha inventado identidad fiscal ni política legal.
 
 No hay analítica, cookies añadidas, formularios ni mapas incrustados. Los enlaces externos llevan a Fresha, Maps e Instagram; sus servicios tienen sus propias condiciones.
@@ -82,3 +82,7 @@ No hay analítica, cookies añadidas, formularios ni mapas incrustados. Los enla
 - https://pagescms.org/docs/configuration/fields/object/
 - https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
 - https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages
+
+## Validación en GitHub
+
+Primera comprobación manual superada: https://github.com/INSPIREMANBarbershop/inspireman-barbershop/actions/runs/37929566792 . Construcción correcta y trabajo deploy omitido, sin publicar.
