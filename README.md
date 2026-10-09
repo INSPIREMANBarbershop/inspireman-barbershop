@@ -1,0 +1,84 @@
+# Inspireman Barbershop · Black Chrome
+
+Web estática en español. No se ha publicado ni se ha conectado una cuenta de GitHub. El PNG original se conserva sin modificar. La copia V9 está en `backup/index-v9.html` y se excluye del repositorio y del despliegue.
+
+## Ver la web en tu ordenador
+
+Abre `index.html` para una vista rápida. Para comprobar rutas como en GitHub Pages, instala Python 3 desde su web oficial y abre una terminal en esta carpeta:
+
+```powershell
+python scripts/build.py
+python scripts/check.py
+python -m http.server 8080 --bind 127.0.0.1
+```
+
+Visita http://127.0.0.1:8080/ . Para detener el servidor, pulsa Ctrl+C. No requiere paquetes Python, Node ni framework. La generación con biblioteca estándar permite que textos y SEO queden en el HTML y sean legibles sin JavaScript. `dist/` contiene exclusivamente la web pública.
+
+## Archivos
+
+- `content/site.json`: textos, dirección, teléfono, enlaces, horario, servicios y fotografías.
+- `.pages.yml`: configuración del panel visual Pages CMS, escrita en JSON, sintaxis válida de YAML.
+- `src/index.template.html`: plantilla. No editar el HTML generado para cambiar contenidos.
+- `assets/styles.css` y `assets/main.js`: diseño y menú accesible.
+- `assets/logo-inspireman.png`: única marca autorizada, también utilizada como favicon.
+- `assets/uploads/`: fotografías reales que se añadan desde el panel.
+- `scripts/build.py`: genera `index.html` y `dist/`.
+- `scripts/check.py`: valida el artefacto antes del despliegue.
+- `.github/workflows/pages.yml`: preparación y publicación manual, desactivada por defecto.
+
+## Activar el panel sin programar
+
+1. Primero hay que disponer de un repositorio GitHub bajo tu control y subir este proyecto incluyendo los archivos ocultos. Esta acción aún no se ha realizado. No subir `backup/`, `dist/`, archivos de cuenta ni contraseñas.
+2. Entra en https://app.pagescms.org y accede con GitHub. Autoriza la aplicación oficial solo para este repositorio. Revisa los permisos en el momento de autorizar.
+3. Selecciona el repositorio y la rama `main`. Pages CMS leerá `.pages.yml` y mostrará «Contenido de la web».
+4. Edita los campos y guarda. Los cambios quedan en GitHub; guardar no publica con el flujo actual.
+5. Servicios: añade nombre y descripción. Precio y duración son opcionales: déjalos vacíos hasta confirmarlos.
+6. Horario: mantén los siete días, con el sábado continuo y el lunes solo de tarde mientras estos sean los horarios vigentes.
+7. Galería: añade un elemento, sube una foto real, completa su descripción accesible y el pie opcional. Usa JPG/WebP optimizado, idealmente hasta 1600 píxeles y menos de 500 KB. La ruta del CMS `/assets/uploads/...` se convierte en relativa en la generación para funcionar bajo el nombre del repositorio. Cambia la introducción «Próximamente» cuando tengas fotografías.
+8. Los fallos de contenido o de fotos faltantes impiden la generación; consulta el registro de Actions y corrige el campo señalado.
+
+El panel usa autenticación real del proveedor; no hay contraseñas en la web ni un falso `/admin`. Su inicio de sesión y funcionamiento real no se pueden verificar hasta autorizar la cuenta y seleccionar el repositorio. Pages CMS es un tercero: la web pública funciona independientemente del panel, pero la edición visual necesita el servicio y GitHub.
+
+## Preparar GitHub Pages gratuito (sin publicar todavía)
+
+Faltan usuario GitHub y nombre del repositorio. En GitHub Free, Pages admite repositorios públicos; su código y contenido serán visibles. No requiere dominio propio ni VPS. La dirección final será `https://USUARIO.github.io/REPOSITORIO/`, sin inventar estos valores.
+
+Antes de lanzar: revisar contigo diseño, datos, enlaces, material fotográfico disponible y decisión de publicación. **No activar Pages ni ejecutar la publicación sin tu autorización.**
+
+Una vez autorizada la publicación:
+
+1. En Settings → Pages, selecciona GitHub Actions como origen.
+2. En Actions → «Preparar o publicar GitHub Pages» → Run workflow, selecciona `main`.
+3. Para validar únicamente, deja «Publicar con autorización del propietario» sin marcar. Se genera un artefacto, sin desplegar.
+4. Para publicar una versión autorizada, marca esa opción y ejecuta. Confirma que ambos trabajos terminan correctamente y abre la URL de la sección Pages. Comprueba enlaces, logo y navegación en móvil.
+5. Después de editar desde Pages CMS, repite el flujo manual para publicar la nueva versión. Guardar desde el panel no lanza el despliegue automáticamente. Si después quieres publicación automática, se podrá añadir el evento `push` solo tras tu autorización y con un flujo de revisión acordado.
+
+Ubicación confirmada: Gijón, Asturias, España. No se ha configurado dominio, URL canónica ni `og:url`. Hay título, descripción, Open Graph textual y favicon; la imagen social absoluta y mejoras SEO locales se podrán completar al conocer la URL pública definitiva. El favicon reutiliza el logo completo para conservar el archivo autorizado, aunque su texto pequeño tendrá visibilidad limitada.
+
+## Copia de seguridad, recuperación y exportación
+
+Descarga Code → Download ZIP para guardar el código y los contenidos. Para conservar todo el historial, clona el repositorio con Git y guarda esa copia. Descarga también cualquier fotografía original fuera de la web.
+
+Para deshacer una edición simple sin programar, abre `content/site.json` en GitHub → History, localiza la versión anterior y copia su contenido mediante el editor de GitHub a una nueva edición; guarda un nuevo commit. Recupera imágenes borradas del historial o de la copia. Para cambios complejos utiliza `git revert HASH` en una copia local y sube el resultado, conservando el historial. Ejecuta el flujo con publicación desmarcada para validar y publica la recuperación solo cuando corresponda.
+
+Para exportar a otro alojamiento estático: ejecuta la generación y copia el contenido de `dist/`. Para cambiar de editor: modifica `content/site.json` y vuelve a generar. Todo el código está en tu repositorio; no depende de una cuenta de IA.
+
+## Pendiente de confirmación
+
+- Código postal, solo si se desea incluirlo; no se ha asumido.
+- Por decisión del propietario, la web mantiene solo las categorías confirmadas y remite a Fresha para consultar los servicios; no es necesario completar precios ni duraciones en la web.
+- Fotos reales del local y de los cortes, con permiso para mostrarlas.
+- Si deseas WhatsApp y si este teléfono lo recibe. No hay botón de WhatsApp por ahora.
+- Usuario GitHub y nombre deseado del repositorio.
+- Revisión de cualquier texto legal que corresponda antes de la publicación; no se ha inventado identidad fiscal ni política legal.
+
+No hay analítica, cookies añadidas, formularios ni mapas incrustados. Los enlaces externos llevan a Fresha, Maps e Instagram; sus servicios tienen sus propias condiciones.
+
+## Fuentes técnicas verificadas el 9 de octubre de 2026
+
+- https://pagescms.org/docs/quick-start/
+- https://pagescms.org/docs/configuration/
+- https://pagescms.org/docs/configuration/media/
+- https://pagescms.org/docs/configuration/fields/object/
+- https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
+- https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages

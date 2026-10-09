@@ -1,0 +1,222 @@
+{
+  "media": {
+    "input": "assets/uploads",
+    "output": "/assets/uploads",
+    "extensions": [
+      "jpg",
+      "jpeg",
+      "png",
+      "webp"
+    ],
+    "rename": "safe"
+  },
+  "content": [
+    {
+      "name": "site",
+      "label": "Contenido de la web",
+      "type": "file",
+      "path": "content/site.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "name",
+          "label": "Nombre del negocio",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "title",
+          "label": "Título SEO",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "description",
+          "label": "Descripción SEO",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "hero_title",
+          "label": "Titular principal",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "hero_text",
+          "label": "Texto principal",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "about_title",
+          "label": "Título de presentación",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "about_text",
+          "label": "Presentación",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "services_title",
+          "label": "Título de servicios",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "services_text",
+          "label": "Introducción de servicios",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "gallery_title",
+          "label": "Título de galería",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "gallery_text",
+          "label": "Introducción de galería",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "contact_title",
+          "label": "Título de contacto",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "contact_text",
+          "label": "Texto de contacto",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "address",
+          "label": "Dirección",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "city",
+          "label": "Ciudad, provincia y país",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "phone",
+          "label": "Teléfono",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "fresha",
+          "label": "Enlace de reservas Fresha",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "maps",
+          "label": "Google Maps",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "instagram",
+          "label": "Instagram",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "services",
+          "label": "Servicios",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "name",
+              "label": "Nombre",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "description",
+              "label": "Descripción",
+              "type": "text",
+              "required": true
+            },
+            {
+              "name": "price",
+              "label": "Precio confirmado (opcional)",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "duration",
+              "label": "Duración confirmada (opcional)",
+              "type": "string",
+              "required": false
+            }
+          ]
+        },
+        {
+          "name": "hours",
+          "label": "Horario semanal",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "day",
+              "label": "Día",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "schedule",
+              "label": "Horario",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "note",
+              "label": "Nota (opcional)",
+              "type": "string",
+              "required": false
+            }
+          ]
+        },
+        {
+          "name": "gallery",
+          "label": "Fotos reales",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "image",
+              "label": "Fotografía",
+              "type": "image",
+              "required": true
+            },
+            {
+              "name": "alt",
+              "label": "Descripción accesible",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "caption",
+              "label": "Pie de foto",
+              "type": "string",
+              "required": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
