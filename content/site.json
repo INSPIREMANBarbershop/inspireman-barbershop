@@ -62,5 +62,121 @@
       "day": "Domingo",
       "schedule": "Cerrado"
     }
-  ]
+  ],
+  "products_title": "TU ESTILO, TAMBIÉN EN CASA.",
+  "products_text": "Descubre los productos Anaqa disponibles en Inspireman Barbershop. Te ayudamos a elegir el acabado que buscas.",
+  "products_store": "https://www.fresha.com/store/tienda-inspiremanbarbershop-u9z86j9x?share=true&pId=1348638",
+  "products_note": "Consulta la disponibilidad y elige tus productos en Fresha o presencialmente en la barbería.",
+  "products_returns": "Compras presenciales: aceptamos devoluciones durante 14 días naturales desde la compra, con justificante, si el producto está sin abrir y sin usar. Esta condición no limita los derechos legales ante productos defectuosos o que no se correspondan con lo anunciado.",
+  "products": [
+    {
+      "name": "Anaqa Defining Curl Cream",
+      "size": "470 ml",
+      "price": "10 €",
+      "short": "Crema para definir y modelar los rizos.",
+      "description": "Crema de peinado para definir los rizos y facilitar su control, con acabado sin sensación grasa. Aplicar una cantidad adecuada sobre el cabello húmedo o seco y dar forma al gusto. Formato de 470 ml.",
+      "image": "/assets/uploads/anaqa-curl-470.png",
+      "alt": "Anaqa Defining Curl Cream"
+    },
+    {
+      "name": "Anaqa Matte Pomade N.º 1",
+      "size": "120 ml",
+      "price": "10 €",
+      "short": "Pomada de fijación firme y acabado mate.",
+      "description": "Pomada para modelar y definir el cabello con fijación firme y acabado mate. Repartir una pequeña cantidad entre los dedos y aplicar sobre el cabello seco o ligeramente húmedo. Formato de 120 ml.",
+      "image": "/assets/uploads/anaqa-matte-pomade-120.png",
+      "alt": "Anaqa Matte Pomade N.º 1"
+    },
+    {
+      "name": "Anaqa Matte Pomade Extrem N.º 2",
+      "size": "120 ml",
+      "price": "10 €",
+      "short": "Pomada de fijación fuerte y acabado mate.",
+      "description": "Pomada para definir y moldear el peinado con fijación fuerte y acabado mate. Trabajar una pequeña cantidad entre los dedos y distribuir sobre el cabello seco o ligeramente húmedo. Formato de 120 ml.",
+      "image": "/assets/uploads/anaqa-extrem-pomade-120.png",
+      "alt": "Anaqa Matte Pomade Extrem N.º 2"
+    },
+    {
+      "name": "Anaqa Cream Pomade N.º 11",
+      "size": "160 ml",
+      "price": "10 €",
+      "short": "Cera de peinado con acabado natural y brillante.",
+      "description": "Cera para modelar y definir el cabello, con fijación duradera y acabado natural con brillo. Trabajar una pequeña cantidad entre los dedos y aplicar sobre el cabello seco o ligeramente húmedo. Formato de 160 ml.",
+      "image": "/assets/uploads/anaqa-cera-11-160.png",
+      "alt": "Anaqa Cream Pomade N.º 11"
+    },
+    {
+      "name": "Anaqa Grooming Keratin N.º 1",
+      "size": "300 ml",
+      "price": "10 €",
+      "short": "Producto de peinado con queratina, volumen y fijación.",
+      "description": "Producto de peinado con queratina para aportar volumen y fijación al cabello. Aplicar una cantidad adecuada sobre el cabello húmedo o seco y modelar al gusto. Formato de 300 ml. Sigue las instrucciones del envase.",
+      "image": "/assets/uploads/anaqa-grooming-keratin-300.png",
+      "alt": "Anaqa Grooming Keratin N.º 1"
+    },
+    {
+      "name": "Anaqa Powder Wax N.º 4",
+      "size": "30 g",
+      "price": "10 €",
+      "short": "Polvo de peinado para volumen y acabado mate.",
+      "description": "Polvo de peinado para aportar volumen y un acabado mate. Aplicar sobre el cabello seco: agitar suavemente el envase, repartir una pequeña cantidad y dar forma al peinado. Formato de 30 g.",
+      "image": "/assets/uploads/anaqa-polvo-4-30.png",
+      "alt": "Anaqa Powder Wax N.º 4"
+    },
+    {
+      "name": "Anaqa Powder Wax N.º 3",
+      "size": "30 g",
+      "price": "10 €",
+      "short": "Polvo de peinado con acabado mate.",
+      "description": "Polvo de peinado para dar cuerpo al cabello y un acabado mate. Aplicar sobre el cabello seco: agitar suavemente el envase, repartir una pequeña cantidad y modelar al gusto. Formato de 30 g.",
+      "image": "/assets/uploads/anaqa-polvo-3-30.png",
+      "alt": "Anaqa Powder Wax N.º 3"
+    },
+    {
+      "name": "Anaqa Powder Wax N.º 1",
+      "size": "30 g",
+      "price": "10 €",
+      "short": "Polvo para dar volumen con acabado mate.",
+      "description": "Polvo voluminizador para dar cuerpo al cabello y conseguir un acabado mate. Aplicar sobre el cabello seco: agitar suavemente el envase, repartir una pequeña cantidad y dar forma. Formato de 30 g.",
+      "image": "/assets/uploads/anaqa-polvo-1-30.png",
+      "alt": "Anaqa Powder Wax N.º 1"
+    },
+    {
+      "name": "Anaqa Powder Wax N.º 5",
+      "size": "30 g",
+      "price": "10 €",
+      "short": "Polvo de peinado para volumen y textura.",
+      "description": "Polvo de peinado Anaqa N.º 5 para aportar volumen y textura al cabello. Formato de 30 g. Sigue las instrucciones del envase; podemos ayudarte a elegir la cantidad y el acabado adecuados en la barbería.",
+      "image": "/assets/uploads/anaqa-polvo-5-30.png",
+      "alt": "Anaqa Powder Wax N.º 5"
+    },
+    {
+      "name": "Anaqa Hair Spray Ultra",
+      "size": "400 ml",
+      "price": "10 €",
+      "short": "Laca en spray para fijar el peinado.",
+      "description": "Laca en spray para fijar el peinado. Pulverizar una cantidad adecuada a unos 30 cm del cabello, evitando el contacto con los ojos. Formato de 400 ml.",
+      "image": "/assets/uploads/anaqa-laca-ultra-400.png",
+      "alt": "Anaqa Hair Spray Ultra"
+    },
+    {
+      "name": "Anaqa Colonia N.º 2",
+      "size": "500 ml",
+      "price": "10 €",
+      "short": "Colonia Anaqa N.º 2 en formato de 500 ml.",
+      "description": "Colonia Anaqa N.º 2. Formato de 500 ml. Aplicar siguiendo las indicaciones del envase y evitar el contacto con los ojos.",
+      "image": "/assets/uploads/anaqa-colonia-2-500.png",
+      "alt": "Anaqa Colonia N.º 2"
+    },
+    {
+      "name": "Anaqa Sea Salt Spray",
+      "size": "150 ml",
+      "price": "10 €",
+      "short": "Spray de sal marina para volumen y textura.",
+      "description": "Spray de sal marina para aportar volumen, textura y un acabado mate al cabello. Aplicar sobre el cabello húmedo o seco y dar forma para conseguir un estilo natural. Formato de 150 ml.",
+      "image": "/assets/uploads/anaqa-sea-salt-150.png",
+      "alt": "Anaqa Sea Salt Spray"
+    }
+  ],
+  "products_mode": "fresha"
 }
