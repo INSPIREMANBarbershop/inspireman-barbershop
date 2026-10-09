@@ -239,6 +239,30 @@
               "required": false
             }
           ]
+        },
+        {
+          "name": "products_title",
+          "label": "Título del catálogo",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "products_text",
+          "label": "Introducción de productos",
+          "type": "text",
+          "required": false
+        },
+        {
+          "name": "products_note",
+          "label": "Información de compra y disponibilidad",
+          "type": "text",
+          "required": false
+        },
+        {
+          "name": "products_store",
+          "label": "Enlace público de la tienda Fresha (opcional)",
+          "type": "string",
+          "required": false
         }
       ]
     }

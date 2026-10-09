@@ -121,3 +121,11 @@ Web pública: https://inspiremanbarbershop.github.io/inspireman-barbershop/ . Pr
 ## Imagen al compartir enlaces
 
 La tarjeta social se obtiene renderizando src/social-preview.html con el PNG original. La copia PNG publicada tiene fondo oscuro para que el logo transparente blanco sea visible. No cambia el logo de la web. El título y la descripción de la tarjeta proceden de Título SEO y Descripción SEO del panel. Después de editar y publicar, las aplicaciones pueden conservar una vista previa anterior; no controlamos sus cachés. La imagen pública es https://inspiremanbarbershop.github.io/inspireman-barbershop/assets/social-preview-v1.png . Referencia: https://ogp.me/ .
+
+## Productos gestionados en Fresha
+
+La web se prepara con una sección Productos que enlazará a la tienda pública de Fresha. No se muestran fichas ni precios duplicados: las modificaciones de productos se hacen solamente en Fresha. Las doce fichas locales se conservan como respaldo, sin mostrarse en la web ni en el editor CMS.
+
+El campo «Enlace público de la tienda Fresha» debe contener la URL real de la tienda, verificada como cliente. Mientras quede vacío, solo se ofrece consulta por teléfono. La tienda pública se comprobó como cliente con los doce productos a 10 EUR y se conectó su URL real al borrador web. La publicación de esta actualización de la web sigue pendiente de autorización.
+
+Para añadir productos en el futuro: crea la ficha en Fresha y comprueba que está seleccionada para la venta en la tienda online. La web seguirá abriendo la misma tienda, sin necesitar modificaciones ni un nuevo despliegue por cada producto. Esta actualización web permanece local y sin publicar.
