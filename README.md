@@ -1,6 +1,6 @@
 # Inspireman Barbershop · Black Chrome
 
-Web estática en español. Repositorio preparado: https://github.com/INSPIREMANBarbershop/inspireman-barbershop . La web nueva no se ha publicado. El PNG original se conserva sin modificar. La copia V9 está en `backup/index-v9.html` y se excluye del repositorio y del despliegue.
+Web estática en español. Repositorio preparado: https://github.com/INSPIREMANBarbershop/inspireman-barbershop . La web está publicada en https://inspiremanbarbershop.github.io/inspireman-barbershop/ tras la aprobación del propietario el 9 de octubre de 2026. El PNG original se conserva sin modificar. La copia V9 está en `backup/index-v9.html` y se excluye del repositorio y del despliegue.
 
 ## Ver la web en tu ordenador
 
@@ -40,9 +40,9 @@ Visita http://127.0.0.1:8080/ . Para detener el servidor, pulsa Ctrl+C. No requi
 
 El panel usa autenticación real del proveedor; no hay contraseñas en la web ni un falso `/admin`. Panel conectado y probado con autenticación GitHub, con acceso limitado al repositorio inspireman-barbershop. Se ha guardado desde el panel la presentación con España en la dirección y verificado el cambio en el repositorio. Pages CMS es un tercero: la web pública funciona independientemente del panel, pero la edición visual necesita el servicio y GitHub.
 
-## Preparar GitHub Pages gratuito (sin publicar todavía)
+## Administrar GitHub Pages gratuito
 
-Cuenta: INSPIREMANBarbershop. Repositorio: inspireman-barbershop. En GitHub Free, Pages admite repositorios públicos; su código y contenido serán visibles. No requiere dominio propio ni VPS. La dirección final será `https://inspiremanbarbershop.github.io/inspireman-barbershop/` después del primer despliegue autorizado; todavía no es una web nueva publicada.
+Cuenta: INSPIREMANBarbershop. Repositorio: inspireman-barbershop. En GitHub Free, Pages admite repositorios públicos; su código y contenido serán visibles. No requiere dominio propio ni VPS. La dirección final será `https://inspiremanbarbershop.github.io/inspireman-barbershop/` y está publicada desde el primer despliegue autorizado del 9 de octubre de 2026.
 
 Antes de lanzar: revisar contigo diseño, datos, enlaces, material fotográfico disponible y decisión de publicación. **No ejecutar la publicación sin tu autorización.** Pages tiene GitHub Actions como origen; cambiar el origen no ha desplegado la web.
 
@@ -113,3 +113,7 @@ Si una foto no aparece tras subirla, entra en el repositorio, rama main, carpeta
 El campo Fotografía utiliza el selector de archivos del CMS para permitir HEIC/HEIF, porque su campo Image rechazaba esos formatos al guardar elementos anidados. Las once extensiones están configuradas y el generador valida que el archivo sea una imagen legible. Los HEIC pueden no tener miniatura en el panel, pero generan una copia WebP que sí se ve en la web.
 
 Las pruebas con textos e imágenes sintéticas están aisladas en la rama qa-integracion; no se deben fusionar sus contenidos en main ni publicarla. La versión final conserva los datos reales y los espacios pendientes de fotos.
+
+## Publicación y comprobación final
+
+Web pública: https://inspiremanbarbershop.github.io/inspireman-barbershop/ . Primer despliegue completado: https://github.com/INSPIREMANBarbershop/inspireman-barbershop/actions/runs/37934692626 . Construcción y despliegue correctos, con el lema aprobado en mayúsculas. Comprobada en Edge con HTTPS, logo cargado, menú móvil y sin errores de consola. Guardar desde Pages CMS continúa sin publicar automáticamente; para cada actualización se utiliza Run workflow en main.
