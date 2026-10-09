@@ -3,3 +3,4 @@ __pycache__/
 backup/
 work/
 .env
+assets/gallery/
