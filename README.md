@@ -103,3 +103,13 @@ Ejecuta `python scripts/full_test.py` después de instalar requirements.txt. Son
 No hay un límite propio de píxeles, proporción o tamaño de carga. Se mantienen los límites de seguridad del decodificador y los límites técnicos de GitHub/Pages CMS: no se puede prometer tamaño ilimitado. Las fotos incompatibles o dañadas producen un error con su nombre antes de desplegar. En TIFF/HEIC multipágina se publica la primera imagen; los GIF animados se conservan. La galería muestra las fotos completas sin recortarlas. Fotografías excesivamente grandes pueden ralentizar la carga; la optimización es una recomendación, no una condición obligatoria del editor.
 
 Los originales de uploads no se copian al artefacto público. Las copias fotográficas procesadas eliminan EXIF (salvo GIF conservado), conservan transparencia y orientación; el logo autorizado permanece intacto.
+
+## Subida de fotos grandes: prueba real
+
+El 9/10/2026 se probó una PNG de 11.537.924 bytes (2400×1600). La carga directa en Pages CMS no quedó guardada en dos intentos; no se ha determinado su umbral exacto. La subida desde GitHub sí funcionó, y después se pudo seleccionar y guardar desde el panel y generar la web conservando 2400×1600.
+
+Si una foto no aparece tras subirla, entra en el repositorio, rama main, carpeta assets/uploads, Add file → Upload files → Choose your files → Commit changes. Vuelve al panel, recarga, añade una foto, Select, elige el archivo, rellena Descripción accesible y Save. Comprueba que el guardado termina antes de iniciar otra subida. GitHub limita las cargas por navegador a 25 MiB por archivo: https://docs.github.com/es/repositories/working-with-files/managing-files/adding-a-file-to-a-repository . Para mayores tamaños hace falta otro procedimiento; no se promete carga ilimitada.
+
+El campo Fotografía utiliza el selector de archivos del CMS para permitir HEIC/HEIF, porque su campo Image rechazaba esos formatos al guardar elementos anidados. Las once extensiones están configuradas y el generador valida que el archivo sea una imagen legible. Los HEIC pueden no tener miniatura en el panel, pero generan una copia WebP que sí se ve en la web.
+
+Las pruebas con textos e imágenes sintéticas están aisladas en la rama qa-integracion; no se deben fusionar sus contenidos en main ni publicarla. La versión final conserva los datos reales y los espacios pendientes de fotos.
