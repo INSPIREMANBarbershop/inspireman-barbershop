@@ -58,5 +58,12 @@
       "day": "Domingo",
       "schedule": "Cerrado"
     }
+  ],
+  "gallery": [
+    {
+      "image": "/assets/uploads/prueba-vertical-n.png",
+      "alt": "PRUEBA TÉCNICA vertical ñ 💈 — no es una foto del negocio",
+      "caption": "Prueba \"comillas\" & < > €"
+    }
   ]
 }
