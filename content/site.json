@@ -68,6 +68,10 @@
     {
       "image": "/assets/uploads/prueba-movil.heic",
       "alt": "PRUEBA TÉCNICA HEIC — no foto del negocio"
+    },
+    {
+      "image": "/assets/uploads/prueba grande 11MB.png",
+      "alt": "PRUEBA TÉCNICA 11 MB 2400×1600 — no foto del negocio"
     }
   ]
 }
