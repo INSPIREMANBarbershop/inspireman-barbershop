@@ -15,3 +15,6 @@
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* Fotos completas: no se recortan ni se exige un formato horizontal. */
+.gallery{align-items:start}.gallery img{aspect-ratio:auto;height:auto;object-fit:contain}.lead,.muted,.card p,.cta p,.gallery figcaption{white-space:pre-line;overflow-wrap:anywhere}.section h2,.hero h1,.card h3{overflow-wrap:anywhere}
