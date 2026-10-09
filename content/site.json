@@ -64,6 +64,10 @@
       "image": "/assets/uploads/prueba-vertical-n.png",
       "alt": "PRUEBA TÉCNICA vertical ñ 💈 — no es una foto del negocio",
       "caption": "Prueba \"comillas\" & < > €"
+    },
+    {
+      "image": "/assets/uploads/prueba-movil.heic",
+      "alt": "PRUEBA TÉCNICA HEIC — no foto del negocio"
     }
   ]
 }
