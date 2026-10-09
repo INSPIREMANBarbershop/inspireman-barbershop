@@ -37,7 +37,7 @@ Visita http://127.0.0.1:8080/ . Para detener el servidor, pulsa Ctrl+C. No requi
 7. Galería: añade un elemento, sube una foto real, completa su descripción accesible y el pie opcional. Usa JPG/WebP optimizado, idealmente hasta 1600 píxeles y menos de 500 KB. La ruta del CMS `/assets/uploads/...` se convierte en relativa en la generación para funcionar bajo el nombre del repositorio. Cambia la introducción «Próximamente» cuando tengas fotografías.
 8. Los fallos de contenido o de fotos faltantes impiden la generación; consulta el registro de Actions y corrige el campo señalado.
 
-El panel usa autenticación real del proveedor; no hay contraseñas en la web ni un falso `/admin`. Su inicio de sesión y funcionamiento real no se pueden verificar hasta autorizar la cuenta y seleccionar el repositorio. Pages CMS es un tercero: la web pública funciona independientemente del panel, pero la edición visual necesita el servicio y GitHub.
+El panel usa autenticación real del proveedor; no hay contraseñas en la web ni un falso `/admin`. Panel conectado y probado con autenticación GitHub, con acceso limitado al repositorio inspireman-barbershop. Se ha guardado desde el panel la presentación con España en la dirección y verificado el cambio en el repositorio. Pages CMS es un tercero: la web pública funciona independientemente del panel, pero la edición visual necesita el servicio y GitHub.
 
 ## Preparar GitHub Pages gratuito (sin publicar todavía)
 
@@ -86,3 +86,11 @@ No hay analítica, cookies añadidas, formularios ni mapas incrustados. Los enla
 ## Validación en GitHub
 
 Primera comprobación manual superada: https://github.com/INSPIREMANBarbershop/inspireman-barbershop/actions/runs/37929566792 . Construcción correcta y trabajo deploy omitido, sin publicar.
+
+## Entrar directamente al editor
+
+https://app.pagescms.org/inspiremanbarbershop/inspireman-barbershop/main/file/site
+
+Accede con tu cuenta GitHub INSPIREMANBarbershop. Puedes editar y guardar los campos visuales. Guardar no publica automáticamente. La aplicación oficial requiere permisos de lectura de estado y Pages, y escritura de contenido, administración, Actions y workflows; se han autorizado expresamente solo para este repositorio. Puedes revocar el acceso en https://github.com/settings/installations .
+
+Pages CMS puede omitir la lista de galería cuando está vacía; la generación y validación aceptan ese caso. Las fotos deben ser reales.
