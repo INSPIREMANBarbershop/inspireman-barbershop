@@ -69,6 +69,7 @@ with tempfile.TemporaryDirectory(prefix='inspireman-qa-') as folder:
     d=copy.deepcopy(BASE);d['gallery']=[{'image':'/assets/uploads/alpha.png','alt':''}];reject('Foto sin descripción',d)
     # Dos generaciones sucesivas: una foto eliminada no debe seguir en el artefacto.
     d=copy.deepcopy(BASE);d['gallery']=[{'image':'/assets/uploads/alpha.png','alt':'Prueba'}]
+    d['products']=[]
     (root/'content/site.json').write_text(json.dumps(d,ensure_ascii=False),encoding='utf-8-sig');build.build_site()
     ok('Lectura UTF-8 con BOM',(root/'dist/index.html').is_file())
     ok('Originales no publicados',not (root/'dist/assets/uploads').exists())

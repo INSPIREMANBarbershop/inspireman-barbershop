@@ -35,7 +35,9 @@ for asset in audit.assets:
     assert (ROOT/'dist'/unquote(asset)).is_file(), 'Activo inexistente: '+asset
 assert hashlib.sha256((ROOT/'assets/logo-inspireman.png').read_bytes()).hexdigest().upper()=='9E1558F9E3E13AD01ADFB484914CF589C8D8DEE21DD2CBD2B7DF2D67F1E2BE89', 'Logo original modificado'
 config=json.loads((ROOT/'.pages.yml').read_text(encoding='utf-8-sig'))
-assert {f['name'] for f in config['content'][0]['fields']}>=set(data), 'Campos CMS incompletos'
+# El respaldo del catálogo anterior no se edita: las fichas se gestionan en Fresha.
+internal={'products','products_returns','products_mode'} if data.get('products_mode')=='fresha' else set()
+assert {f['name'] for f in config['content'][0]['fields']}>=set(data)-internal, 'Campos CMS incompletos'
 assert len(data['hours'])==7
 # Asegura que el contenido del editor no pueda introducir HTML ni URLs ejecutables.
 sample=copy.deepcopy(data);sample['hero_title']='<script>alert(1)</script>'

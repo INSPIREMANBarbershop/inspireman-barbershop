@@ -12,6 +12,7 @@ DAYS=['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo']
 def normalize(data):
     if not isinstance(data,dict): raise ValueError('El contenido debe ser un objeto JSON')
     d=dict(data)
+    if d.get('products_mode','catalog') not in ('catalog','fresha'): raise ValueError('Modo de productos inválido')
     required=['name','title','description','hero_title','hero_text','about_title','about_text','services_title','services_text','gallery_title','gallery_text','contact_title','contact_text','address','phone','fresha','maps','instagram']
     for key in required:
         if not isinstance(d.get(key),str) or not d[key].strip(): raise ValueError('Completa el campo: '+key)
@@ -23,7 +24,7 @@ def normalize(data):
     digits=re.sub(r'[ ()-]','',d['phone'])
     if not re.fullmatch(r'\+?[0-9]{7,15}',digits): raise ValueError('Teléfono inválido')
     d['tel']='tel:'+digits
-    for key in ('services','gallery'):
+    for key in ('services','gallery','products'):
         d[key]=d.get(key) or []
         if not isinstance(d[key],list): raise ValueError(key+': debe ser una lista')
     for item in d['services']:
@@ -31,7 +32,17 @@ def normalize(data):
     if not isinstance(d.get('hours'),list) or [h.get('day') for h in d['hours'] if isinstance(h,dict)]!=DAYS: raise ValueError('El horario debe contener Lunes a Domingo, una vez y en orden')
     for h in d['hours']:
         if not isinstance(h.get('schedule'),str) or not h['schedule'].strip(): raise ValueError('Completa el horario de '+h['day'])
+    for key in ('products_title','products_text','products_note','products_returns','products_store'):
+        d[key]=d.get(key) or ''
+        if not isinstance(d[key],str): raise ValueError(key+': debe ser texto')
+    if d['products_store']:
+        raw=d['products_store'];u=urlsplit(raw)
+        if u.scheme!='https' or not u.hostname or u.username or any(c.isspace() or ord(c)<32 for c in raw): raise ValueError('products_store: usa una URL HTTPS válida sin espacios')
+        if u.hostname not in ('fresha.com','www.fresha.com'): raise ValueError('El enlace de la tienda debe ser una URL pública de Fresha')
+    for item in d['products']:
+        if not isinstance(item,dict) or not all(isinstance(item.get(k),str) and item[k].strip() for k in ('name','size','price','short','description','image','alt')): raise ValueError('Cada producto necesita nombre, tamaño, precio, textos y fotografía')
     return d
+
 def image_asset(photo):
     if not isinstance(photo,dict) or not isinstance(photo.get('image'),str): raise ValueError('Selecciona una fotografía')
     path=unquote(photo['image']).lstrip('/')
@@ -67,6 +78,16 @@ def render(data):
         path,w,h=image_asset(photo)
         photos.append('<figure><img src="'+quote(path,safe='/')+'" alt="'+e(photo['alt'])+'" loading="lazy" decoding="async" width="'+str(w)+'" height="'+str(h)+'">'+('<figcaption>'+e(photo['caption'])+'</figcaption>' if photo.get('caption') else '')+'</figure>')
     v['gallery_items']=''.join(photos) if photos else ''.join('<div class="placeholder"><span>'+title+'</span><p>Fotografías próximamente</p></div>' for title in ['EL LOCAL','LOS CORTES','LA BARBA'])
+    products=[]
+    for product in ([] if d.get('products_mode')=='fresha' else d['products']):
+        path,w,h=image_asset(product)
+        products.append('<article class="product-card"><div class="product-photo"><img src="'+quote(path,safe='/')+'" alt="'+e(product['alt'])+'" loading="lazy" decoding="async" width="'+str(w)+'" height="'+str(h)+'"></div><div class="product-body"><span class="product-size">'+e(product['size'])+'</span><h3>'+e(product['name'])+'</h3><p>'+e(product['short'])+'</p><div class="product-bottom"><strong class="product-price">'+e(product['price'])+'</strong><details><summary>Detalles<span class="sr-only"> de '+e(product['name'])+'</span></summary><p>'+e(product['description'])+'</p></details></div></div></article>')
+    store='<a class="button primary" href="'+e(d['products_store'])+'" target="_blank" rel="noopener noreferrer">COMPRAR EN FRESHA<span class="sr-only"> (abre otra pestaña)</span></a>' if d['products_store'] else ''
+    v['products_section']=('<section class="section product-section" id="productos"><div class="container"><div class="section-head"><div><p class="eyebrow">03 / PRODUCTOS ANAQA</p><h2 class="metal">'+e(d['products_title'] or 'PRODUCTOS ANAQA')+'</h2></div><p class="muted">'+e(d['products_text'])+'</p></div><div class="products-grid">'+''.join(products)+'</div><div class="catalog-actions"><p class="muted">'+e(d['products_note'])+'</p><div class="actions">'+store+'<a class="button ghost" href="'+e(d['tel'])+'">CONSULTAR DISPONIBILIDAD</a></div></div>'+('<details class="returns"><summary>Cambios y devoluciones</summary><p>'+e(d['products_returns'])+'</p></details>' if d['products_returns'] else '')+'</div></section>') if products else ''
+    if d.get('products_mode')=='fresha':
+        store='<a class="button primary" href="'+e(d['products_store'])+'" target="_blank" rel="noopener noreferrer">VER PRODUCTOS EN FRESHA<span class="sr-only"> (abre otra pestaña)</span></a>' if d['products_store'] else '<p class="muted">Consulta los productos disponibles en la barbería.</p>'
+        v['products_section']='<section class="section product-section" id="productos"><div class="container"><div class="section-head"><div><p class="eyebrow">03 / PRODUCTOS ANAQA</p><h2 class="metal">'+e(d['products_title'] or 'PRODUCTOS ANAQA')+'</h2></div><p class="muted">'+e(d['products_text'])+'</p></div><div class="catalog-actions"><p class="muted">'+e(d['products_note'])+'</p><div class="actions">'+store+'<a class="button ghost" href="'+e(d['tel'])+'">CONSULTAR DISPONIBILIDAD</a></div></div></div></section>'
+    v['products_nav']='<a href="#productos">PRODUCTOS</a>' if products or d.get('products_mode')=='fresha' else ''
     template=(ROOT/'src/index.template.html').read_text(encoding='utf-8-sig')
     return re.sub(r'{{(\w+)}}',lambda m:v[m[1]],template)
 def build_site():
@@ -80,13 +101,13 @@ def build_site():
     out.mkdir()
     (out/'index.html').write_text(html,encoding='utf-8')
     shutil.copytree(ROOT/'assets',out/'assets',ignore=shutil.ignore_patterns('uploads','gallery'))
-    for photo in normalize(data)['gallery']:
+    for photo in normalize(data)['gallery']+([] if data.get('products_mode')=='fresha' else normalize(data)['products']):
         path,_,_=image_asset(photo);dest=out/path;dest.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(ROOT/'work/image-cache'/dest.name,dest)
     (out/'.nojekyll').touch()
     (ROOT/'index.html').write_text(html,encoding='utf-8')
     # Vista local: mismas imágenes procesadas que el artefacto público.
     local=ROOT/'assets/gallery';local.mkdir(exist_ok=True)
-    for photo in normalize(data)['gallery']:
+    for photo in normalize(data)['gallery']+([] if data.get('products_mode')=='fresha' else normalize(data)['products']):
         path,_,_=image_asset(photo);shutil.copy2(out/path,ROOT/path)
     print('OK: web generada; no se ha publicado nada.')
 if __name__=='__main__': build_site()
