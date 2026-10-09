@@ -18,3 +18,8 @@
 
 /* Fotos completas: no se recortan ni se exige un formato horizontal. */
 .gallery{align-items:start}.gallery img{aspect-ratio:auto;height:auto;object-fit:contain}.lead,.muted,.card p,.cta p,.gallery figcaption{white-space:pre-line;overflow-wrap:anywhere}.section h2,.hero h1,.card h3{overflow-wrap:anywhere}
+
+/* Lema principal: lectura cómoda de una frase más larga. */
+.hero h1{font-size:clamp(40px,4.3vw,62px);line-height:1.08;letter-spacing:-.045em;text-wrap:balance}
+@media(max-width:550px){.hero h1{font-size:clamp(34px,9vw,46px)}}
+.hero h1{text-transform:uppercase}
