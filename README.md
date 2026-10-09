@@ -54,7 +54,7 @@ Una vez autorizada la publicación:
 4. Para publicar una versión autorizada, marca esa opción y ejecuta. Confirma que ambos trabajos terminan correctamente y abre la URL de la sección Pages. Comprueba enlaces, logo y navegación en móvil.
 5. Después de editar desde Pages CMS, repite el flujo manual para publicar la nueva versión. Guardar desde el panel no lanza el despliegue automáticamente. Si después quieres publicación automática, se podrá añadir el evento `push` solo tras tu autorización y con un flujo de revisión acordado.
 
-Ubicación confirmada: Gijón, Asturias, España. No se ha configurado dominio, URL canónica ni `og:url`. Hay título, descripción, Open Graph textual y favicon; la imagen social absoluta y mejoras SEO locales se podrán completar al conocer la URL pública definitiva. El favicon reutiliza el logo completo para conservar el archivo autorizado, aunque su texto pequeño tendrá visibilidad limitada.
+Ubicación confirmada: Gijón, Asturias, España. Se han configurado URL canónica, `og:url`, Open Graph y Twitter Card con direcciones HTTPS absolutas. La imagen social `assets/social-preview-v1.png` mide 1200×630, tiene fondo Black Chrome opaco y utiliza el PNG autorizado sin modificar el original. No hay dominio propio. El favicon reutiliza el logo completo para conservar el archivo autorizado, aunque su texto pequeño tendrá visibilidad limitada.
 
 ## Copia de seguridad, recuperación y exportación
 
@@ -117,3 +117,7 @@ Las pruebas con textos e imágenes sintéticas están aisladas en la rama qa-int
 ## Publicación y comprobación final
 
 Web pública: https://inspiremanbarbershop.github.io/inspireman-barbershop/ . Primer despliegue completado: https://github.com/INSPIREMANBarbershop/inspireman-barbershop/actions/runs/37934692626 . Construcción y despliegue correctos, con el lema aprobado en mayúsculas. Comprobada en Edge con HTTPS, logo cargado, menú móvil y sin errores de consola. Guardar desde Pages CMS continúa sin publicar automáticamente; para cada actualización se utiliza Run workflow en main.
+
+## Imagen al compartir enlaces
+
+La tarjeta social se obtiene renderizando src/social-preview.html con el PNG original. La copia PNG publicada tiene fondo oscuro para que el logo transparente blanco sea visible. No cambia el logo de la web. El título y la descripción de la tarjeta proceden de Título SEO y Descripción SEO del panel. Después de editar y publicar, las aplicaciones pueden conservar una vista previa anterior; no controlamos sus cachés. La imagen pública es https://inspiremanbarbershop.github.io/inspireman-barbershop/assets/social-preview-v1.png . Referencia: https://ogp.me/ .
