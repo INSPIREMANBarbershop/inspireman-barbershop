@@ -207,8 +207,24 @@
             {
               "name": "image",
               "label": "Fotografía",
-              "type": "image",
-              "required": true
+              "type": "file",
+              "required": true,
+              "options": {
+                "media": "default",
+                "extensions": [
+                  "jpg",
+                  "jpeg",
+                  "png",
+                  "webp",
+                  "gif",
+                  "avif",
+                  "heic",
+                  "heif",
+                  "tif",
+                  "tiff",
+                  "bmp"
+                ]
+              }
             },
             {
               "name": "alt",
