@@ -7,12 +7,13 @@ Web estática en español. Repositorio preparado: https://github.com/INSPIREMANB
 Abre `index.html` para una vista rápida. Para comprobar rutas como en GitHub Pages, instala Python 3 desde su web oficial y abre una terminal en esta carpeta:
 
 ```powershell
+python -m pip install -r requirements.txt
 python scripts/build.py
 python scripts/check.py
 python -m http.server 8080 --bind 127.0.0.1
 ```
 
-Visita http://127.0.0.1:8080/ . Para detener el servidor, pulsa Ctrl+C. No requiere paquetes Python, Node ni framework. La generación con biblioteca estándar permite que textos y SEO queden en el HTML y sean legibles sin JavaScript. `dist/` contiene exclusivamente la web pública.
+Visita http://127.0.0.1:8080/ . Para detener el servidor, pulsa Ctrl+C. No requiere Node ni framework. Pillow y pillow-heif procesan las fotografías para aceptar HEIC/TIFF y otros formatos, corregir orientación de móvil y generar imágenes compatibles. La generación permite que textos y SEO queden en el HTML y sean legibles sin JavaScript. `dist/` contiene exclusivamente la web pública.
 
 ## Archivos
 
@@ -34,7 +35,7 @@ Visita http://127.0.0.1:8080/ . Para detener el servidor, pulsa Ctrl+C. No requi
 4. Edita los campos y guarda. Los cambios quedan en GitHub; guardar no publica con el flujo actual.
 5. Servicios: añade nombre y descripción. Precio y duración son opcionales: déjalos vacíos hasta confirmarlos.
 6. Horario: mantén los siete días, con el sábado continuo y el lunes solo de tarde mientras estos sean los horarios vigentes.
-7. Galería: añade un elemento, sube una foto real, completa su descripción accesible y el pie opcional. Usa JPG/WebP optimizado, idealmente hasta 1600 píxeles y menos de 500 KB. La ruta del CMS `/assets/uploads/...` se convierte en relativa en la generación para funcionar bajo el nombre del repositorio. Cambia la introducción «Próximamente» cuando tengas fotografías.
+7. Galería: añade un elemento, sube una foto real, completa su descripción accesible y el pie opcional. Admite JPG, JPEG, PNG, WebP, GIF, AVIF, HEIC, HEIF, TIFF, TIF y BMP. No impone una resolución ni proporción: la fotografía se muestra completa y conserva sus dimensiones. Los originales quedan en el repositorio; la web sirve una copia compatible (WebP sin reducción de resolución, o GIF animado). Los nombres se transforman en rutas de salida estables para que tildes, espacios y caracteres como # no rompan las imágenes bajo el nombre del repositorio. Cambia la introducción «Próximamente» cuando tengas fotografías.
 8. Los fallos de contenido o de fotos faltantes impiden la generación; consulta el registro de Actions y corrige el campo señalado.
 
 El panel usa autenticación real del proveedor; no hay contraseñas en la web ni un falso `/admin`. Panel conectado y probado con autenticación GitHub, con acceso limitado al repositorio inspireman-barbershop. Se ha guardado desde el panel la presentación con España en la dirección y verificado el cambio en el repositorio. Pages CMS es un tercero: la web pública funciona independientemente del panel, pero la edición visual necesita el servicio y GitHub.
@@ -94,3 +95,11 @@ https://app.pagescms.org/inspiremanbarbershop/inspireman-barbershop/main/file/si
 Accede con tu cuenta GitHub INSPIREMANBarbershop. Puedes editar y guardar los campos visuales. Guardar no publica automáticamente. La aplicación oficial requiere permisos de lectura de estado y Pages, y escritura de contenido, administración, Actions y workflows; se han autorizado expresamente solo para este repositorio. Puedes revocar el acceso en https://github.com/settings/installations .
 
 Pages CMS puede omitir la lista de galería cuando está vacía; la generación y validación aceptan ese caso. Las fotos deben ser reales.
+
+## Pruebas completas y fotos
+
+Ejecuta `python scripts/full_test.py` después de instalar requirements.txt. Son pruebas reales de codificación, campos opcionales, seguridad, once extensiones, transparencia, animación GIF, EXIF, orientación y eliminación de fotos del artefacto. Se ejecutan también en GitHub antes de preparar cada versión.
+
+No hay un límite propio de píxeles, proporción o tamaño de carga. Se mantienen los límites de seguridad del decodificador y los límites técnicos de GitHub/Pages CMS: no se puede prometer tamaño ilimitado. Las fotos incompatibles o dañadas producen un error con su nombre antes de desplegar. En TIFF/HEIC multipágina se publica la primera imagen; los GIF animados se conservan. La galería muestra las fotos completas sin recortarlas. Fotografías excesivamente grandes pueden ralentizar la carga; la optimización es una recomendación, no una condición obligatoria del editor.
+
+Los originales de uploads no se copian al artefacto público. Las copias fotográficas procesadas eliminan EXIF (salvo GIF conservado), conservan transparencia y orientación; el logo autorizado permanece intacto.
