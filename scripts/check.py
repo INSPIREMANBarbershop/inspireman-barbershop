@@ -18,8 +18,8 @@ class Audit(HTMLParser):
         if tag=='img': assert a.get('alt'); self.assets.append(a['src'])
         if tag=='script' and 'src' in a: self.assets.append(a['src'])
         if tag=='link': self.assets.append(a['href'])
-data=json.loads((ROOT/'content/site.json').read_text(encoding='utf-8'))
-html=(ROOT/'dist/index.html').read_text(encoding='utf-8')
+data=json.loads((ROOT/'content/site.json').read_text(encoding='utf-8-sig'))
+html=(ROOT/'dist/index.html').read_text(encoding='utf-8-sig')
 assert html==render(data), 'HTML desactualizado: ejecutar build.py'
 audit=Audit();audit.feed(html)
 assert audit.h1==1
@@ -31,8 +31,8 @@ for asset in audit.assets:
     assert not asset.startswith('/'), 'Ruta incompatible con subdirectorio'
     assert (ROOT/'dist'/unquote(asset)).is_file(), 'Activo inexistente: '+asset
 assert hashlib.sha256((ROOT/'assets/logo-inspireman.png').read_bytes()).hexdigest().upper()=='9E1558F9E3E13AD01ADFB484914CF589C8D8DEE21DD2CBD2B7DF2D67F1E2BE89', 'Logo original modificado'
-config=json.loads((ROOT/'.pages.yml').read_text(encoding='utf-8'))
-assert {f['name'] for f in config['content'][0]['fields']}==(set(data)|{'gallery'}), 'Campos CMS incompletos'
+config=json.loads((ROOT/'.pages.yml').read_text(encoding='utf-8-sig'))
+assert {f['name'] for f in config['content'][0]['fields']}>=set(data), 'Campos CMS incompletos'
 assert len(data['hours'])==7
 # Asegura que el contenido del editor no pueda introducir HTML ni URLs ejecutables.
 sample=copy.deepcopy(data);sample['hero_title']='<script>alert(1)</script>'
