@@ -5,7 +5,7 @@
   "hero_title": "ESTILO SIN LÍMITES.",
   "hero_text": "Fade, cortes degradados y barba. Tu próximo look empieza aquí.",
   "about_title": "TU ESTILO. TU ESPACIO.",
-  "about_text": "Encuéntranos en Calle San José 36, bajo, Gijón, Asturias. Consulta nuestros horarios y los servicios disponibles, y elige tu próxima cita en Fresha.",
+  "about_text": "Encuéntranos en Calle San José 36, bajo, Gijón, Asturias, España. Consulta nuestros horarios y los servicios disponibles, y elige tu próxima cita en Fresha.",
   "services_title": "PRECISIÓN EN CADA DETALLE.",
   "services_text": "Consulta las opciones disponibles en Fresha antes de reservar.",
   "gallery_title": "EL ESPACIO. LOS DETALLES.",
@@ -21,42 +21,33 @@
   "services": [
     {
       "name": "Fade / cortes degradados",
-      "description": "Consulta las opciones de corte al reservar.",
-      "price": "",
-      "duration": ""
+      "description": "Consulta las opciones de corte al reservar."
     },
     {
       "name": "Barba",
-      "description": "Consulta las opciones de barba al reservar.",
-      "price": "",
-      "duration": ""
+      "description": "Consulta las opciones de barba al reservar."
     }
   ],
   "hours": [
     {
       "day": "Lunes",
-      "schedule": "16:00–20:30",
-      "note": ""
+      "schedule": "16:00–20:30"
     },
     {
       "day": "Martes",
-      "schedule": "10:00–13:00 / 16:00–20:30",
-      "note": ""
+      "schedule": "10:00–13:00 / 16:00–20:30"
     },
     {
       "day": "Miércoles",
-      "schedule": "10:00–13:00 / 16:00–20:30",
-      "note": ""
+      "schedule": "10:00–13:00 / 16:00–20:30"
     },
     {
       "day": "Jueves",
-      "schedule": "10:00–13:00 / 16:00–20:30",
-      "note": ""
+      "schedule": "10:00–13:00 / 16:00–20:30"
     },
     {
       "day": "Viernes",
-      "schedule": "10:00–13:00 / 16:00–20:30",
-      "note": ""
+      "schedule": "10:00–13:00 / 16:00–20:30"
     },
     {
       "day": "Sábado",
@@ -65,9 +56,7 @@
     },
     {
       "day": "Domingo",
-      "schedule": "Cerrado",
-      "note": ""
+      "schedule": "Cerrado"
     }
-  ],
-  "gallery": []
+  ]
 }
