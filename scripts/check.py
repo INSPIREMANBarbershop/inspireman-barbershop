@@ -32,7 +32,7 @@ for asset in audit.assets:
     assert (ROOT/'dist'/unquote(asset)).is_file(), 'Activo inexistente: '+asset
 assert hashlib.sha256((ROOT/'assets/logo-inspireman.png').read_bytes()).hexdigest().upper()=='9E1558F9E3E13AD01ADFB484914CF589C8D8DEE21DD2CBD2B7DF2D67F1E2BE89', 'Logo original modificado'
 config=json.loads((ROOT/'.pages.yml').read_text(encoding='utf-8'))
-assert {f['name'] for f in config['content'][0]['fields']}==set(data), 'Campos CMS incompletos'
+assert {f['name'] for f in config['content'][0]['fields']}==(set(data)|{'gallery'}), 'Campos CMS incompletos'
 assert len(data['hours'])==7
 # Asegura que el contenido del editor no pueda introducir HTML ni URLs ejecutables.
 sample=copy.deepcopy(data);sample['hero_title']='<script>alert(1)</script>'
