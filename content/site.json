@@ -1,0 +1,73 @@
+{
+  "name": "Inspireman Barbershop",
+  "title": "Inspireman Barbershop en Gijón | Fade y barba",
+  "description": "Fade, cortes degradados y barba en Inspireman Barbershop, Gijón, Asturias. Calle San José 36, bajo. Consulta horarios y reserva tu cita en Fresha.",
+  "hero_title": "ESTILO SIN LÍMITES.",
+  "hero_text": "Fade, cortes degradados y barba. Tu próximo look empieza aquí.",
+  "about_title": "TU ESTILO. TU ESPACIO.",
+  "about_text": "Encuéntranos en Calle San José 36, bajo, Gijón, Asturias. Consulta nuestros horarios y los servicios disponibles, y elige tu próxima cita en Fresha.",
+  "services_title": "PRECISIÓN EN CADA DETALLE.",
+  "services_text": "Consulta las opciones disponibles en Fresha antes de reservar.",
+  "gallery_title": "EL ESPACIO. LOS DETALLES.",
+  "gallery_text": "Próximamente: fotografías reales del local y de nuestros trabajos.",
+  "contact_title": "EL PRÓXIMO CORTE EMPIEZA AQUÍ.",
+  "contact_text": "Reserva online, llámanos o descubre nuestros trabajos en Instagram.",
+  "address": "Calle San José 36, bajo",
+  "city": "Gijón, Asturias, España",
+  "phone": "+34 671 15 32 09",
+  "fresha": "https://www.fresha.com/book-now/inspiremanbarbershop-dx5c4ah7/services?lid=1420139&eid=3228950&share=true&pId=1348638",
+  "maps": "https://maps.app.goo.gl/vq8HRumMz9WRunkFA?g_st=ic",
+  "instagram": "https://www.instagram.com/inspiremanbarbershop?obrf=cnAyNHVvZ2U3dDVt&utm_source=qr",
+  "services": [
+    {
+      "name": "Fade / cortes degradados",
+      "description": "Consulta las opciones de corte al reservar.",
+      "price": "",
+      "duration": ""
+    },
+    {
+      "name": "Barba",
+      "description": "Consulta las opciones de barba al reservar.",
+      "price": "",
+      "duration": ""
+    }
+  ],
+  "hours": [
+    {
+      "day": "Lunes",
+      "schedule": "16:00–20:30",
+      "note": ""
+    },
+    {
+      "day": "Martes",
+      "schedule": "10:00–13:00 / 16:00–20:30",
+      "note": ""
+    },
+    {
+      "day": "Miércoles",
+      "schedule": "10:00–13:00 / 16:00–20:30",
+      "note": ""
+    },
+    {
+      "day": "Jueves",
+      "schedule": "10:00–13:00 / 16:00–20:30",
+      "note": ""
+    },
+    {
+      "day": "Viernes",
+      "schedule": "10:00–13:00 / 16:00–20:30",
+      "note": ""
+    },
+    {
+      "day": "Sábado",
+      "schedule": "10:00–15:00",
+      "note": "Horario continuo"
+    },
+    {
+      "day": "Domingo",
+      "schedule": "Cerrado",
+      "note": ""
+    }
+  ],
+  "gallery": []
+}
