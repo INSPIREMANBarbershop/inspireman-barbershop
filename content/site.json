@@ -7,7 +7,7 @@
   "about_title": "TU ESTILO. TU ESPACIO.",
   "about_text": "Encuéntranos en Calle San José 36, bajo, Gijón, Asturias, España. Consulta nuestros horarios y los servicios disponibles, y elige tu próxima cita en Fresha.",
   "services_title": "PRECISIÓN EN CADA DETALLE.",
-  "services_text": "Consulta las opciones disponibles en Fresha antes de reservar.",
+  "services_text": "Consulta las opciones de corte y barba en Fresha. Los tintes requieren consulta previa para acordar el trabajo y la disponibilidad.",
   "gallery_title": "EL ESPACIO. LOS DETALLES.",
   "gallery_text": "Próximamente: fotografías reales del local y de nuestros trabajos.",
   "contact_title": "EL PRÓXIMO CORTE EMPIEZA AQUÍ.",
@@ -29,7 +29,7 @@
     },
     {
       "name": "Tintes",
-      "description": "Consulta las opciones de tintes al reservar."
+      "description": "Tintes: consulta previa obligatoria. Antes de concertar tu cita, llama al +34 671 15 32 09, escríbenos por Instagram (@inspiremanbarbershop) o acércate a la barbería. Necesitamos valorar el estilo que deseas (tinte global, mechas u otro trabajo). El precio, la duración y la disponibilidad dependen del trabajo elegido; el horario se acuerda después de la consulta."
     }
   ],
   "hours": [
